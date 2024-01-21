@@ -1,12 +1,13 @@
-from core.config import config
-from db.database import get_connection
 from fastapi import APIRouter, HTTPException
 from psycopg.rows import class_row
-from schemas.todo import TodoCreate, TodoRead, TodoUpdate
+
+from core.config import config
+from db.database import get_connection
 from db.query.create_query import create_query
+from db.query.delete_query import delete_query
 from db.query.read_query import read_query
 from db.query.update_query import update_query
-from db.query.delete_query import delete_query
+from schemas.todo import TodoCreate, TodoRead, TodoUpdate
 
 # routerのprefixを設定
 router = APIRouter(prefix=config.TODO_PREFIX)

@@ -1,8 +1,8 @@
-from db.database import get_connection
 from fastapi import FastAPI
-from routers import todo
-from db.query.ddl import ddl
 
+from db.database import get_connection
+from db.query.ddl import ddl
+from routers import todo
 
 app = FastAPI()
 
