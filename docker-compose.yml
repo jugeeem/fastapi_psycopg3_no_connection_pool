@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+  db:
+    container_name: db
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: Postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: 'Asia/Tokyo'
+    ports:
+      - '5432:5432'
+  db-gui:
+    container_name: db-gui
+    image: dpage/pgadmin4
+    depends_on:
+      - db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: email@email.com
+      PGADMIN_DEFAULT_PASSWORD: pw
+    ports:
+      - '80:80'
