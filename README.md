@@ -1,3 +1,7 @@
+### Translation
+- [English](#Implement-CRUD-processing-using-FastAPI-and-psycopg3)
+- [日本語](#FastAPIとpsycopg3を使ってCRUD処理を実装する)
+
 # Implement CRUD processing using FastAPI and psycopg3
 
 ## Introduction.
